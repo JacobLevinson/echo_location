@@ -1,8 +1,8 @@
 // echo location Idea Hacks LA 2024 Project
 
 #define NUM_SENSORS 6
-const int trigPins[NUM_SENSORS] = {2, 3, 4, 5};
-const int echoPins[NUM_SENSORS] = {7, 8, 9, 10};
+const int trigPins[NUM_SENSORS] = {2, 3, 4, 5, 6, 7};
+const int echoPins[NUM_SENSORS] = {8, 9, 10, 11, 12};
 
 long durations[NUM_SENSORS];
 int distances[NUM_SENSORS];
