@@ -5,9 +5,9 @@ const int trigPins[NUM_SENSORS] = {2, 4, 7, 8, 12, 13};
 const int echoPins[NUM_SENSORS] = {14, 15, 16, 17, 18};
 const int vibrationPins[NUM_SENSORS] = {3, 5, 6, 9, 10, 11};
 
-
 long durations[NUM_SENSORS];
 int distances[NUM_SENSORS];
+int vibration[NUM_SENSORS];
 
 void setup()
 {
@@ -18,6 +18,7 @@ void setup()
   {
     pinMode(trigPins[i], OUTPUT);
     pinMode(echoPins[i], INPUT);
+    pinMode(vibrationPins[i], OUTPUT);
   }
 }
 
@@ -26,6 +27,7 @@ void loop()
   // put your main code here, to run repeatedly:
   for (int i = 0; i < NUM_SENSORS; i++)
   {
+    Serial.println("Sensor " + i);
     digitalWrite(trigPins[i], LOW);
     delayMicroseconds(2);
 
@@ -44,12 +46,13 @@ void loop()
     Serial.print("Distance ");
     Serial.print(i);
     Serial.print(": ");
-
     Serial.print(distances[i]);
     Serial.println(" cm");
 
-    
-
+    int vib = min(distances[i], 300);
+    vibration[i] = map(vib, 0, 300, 255, 0);
+    analogWrite(vibrationPins[i], vibration[i]);
+    Serial.println("Vibration " + vibration[i]);
     // Wait for a short time before taking the next measurement
     delay(10);
   }
