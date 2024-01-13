@@ -5,3 +5,4 @@ Idea Hacks LA Project
 Jacob Levinson
 Preston Futaba
 Daniel Yang
+Adrian McIntosh (@adrianmc15)
