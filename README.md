@@ -1,5 +1,5 @@
 # echo_location
-Idea Hacks LA Project
+Idea Hacks LA 2024 1st Palce Winning Project
 
 # Members:
 Jacob Levinson
